@@ -22,7 +22,7 @@ class ShowAppointments extends Component
     {
         $sentence = Appointment::where('state','1')->where(
             function ($query) { 
-                $query->where('patients.name_first','like','%'.$this->search.'%')->orWhere('patients.email','like','%'.$this->search.'%')->orWhere('patients.curp','like','%'.$this->search.'%'); 
+                $query->where('name_first','like','%'.$this->search.'%')->orWhere('email','like','%'.$this->search.'%')->orWhere('curp','like','%'.$this->search.'%'); 
             }
         );
         /*
